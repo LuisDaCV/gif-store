@@ -5,7 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
-
+/bun.lock
 # Node
 /node_modules
 npm-debug.log

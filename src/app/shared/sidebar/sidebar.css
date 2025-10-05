@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.btn-sidebar{
+    @apply bg-green-500 px-2 py-3 w-full text-lg text-black font-semibold rounded-xl hover:scale-104 hover:bg-green-600  duration-300 transition;
+}

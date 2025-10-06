@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Component, computed, Signal, signal } from '@angular/core';
+import { Sidebar } from "./shared/sidebar/sidebar";
+import { GifsPage } from "./gifs/gifs-page/gifs-page";
+import { GifService } from './gifs/services/gif.service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Sidebar, GifsPage],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('gifsApp');
+  
+  searches: Signal<string[]>;
+  
+  constructor(private gifService: GifService) {
+    this.searches = gifService.searches;
+  };
+  
+  search(value:string) {
+    this.gifService.setCurrentSearch(value)
+  }
+
+
+
 }

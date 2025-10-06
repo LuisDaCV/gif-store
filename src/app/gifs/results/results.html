@@ -1,6 +1,14 @@
-<div class="flex">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse modi necessitatibus vel assumenda
-        officiis
-        ipsam libero veniam repellendus eos! Omnis facere repellat incidunt culpa repudiandae in deserunt, voluptas
-        nemo.</p>
+<div class="flex flex-col">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    @for (item of results; track item.id) {
+    <div class="flex flex-col animate__animated animate__fadeIn animate__slower">
+      <div class=" relative bg-black w-full h-full overflow-hidden rounded-lg hover:scale-105 transition   ">
+        <img class="w-full h-full object-cover" [src]="item.images.fixed_height.url" [alt]="item.title" loading="lazy">
+      </div>
+      <div class="mt-2">
+        <h2 class="text-sm font-medium truncate">{{item.title}}</h2>
+      </div>
+    </div>
+    }
+  </div>
 </div>
